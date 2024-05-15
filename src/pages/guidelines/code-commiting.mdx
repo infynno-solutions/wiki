@@ -1,0 +1,78 @@
+# Code Committing Guidelines
+
+Welcome to our code committing guidelines! This document serves as a reference for all developers contributing to any of our projects. Following these guidelines ensures consistency, clarity, and collaboration within our team.
+
+## Branching Strategy
+
+We follow a branching strategy that consists of three main branches: `dev`, `staging`, and `main`. Each branch serves a specific purpose in our development and release workflow.
+
+### Dev Branch
+
+The `dev` branch is the primary branch for ongoing development work. It serves as the integration branch where feature branches are merged for testing and collaboration. All new features and bug fixes should be branched off from `dev`.
+
+#### Guidelines for committing to `dev`:
+
+- Make sure your code is thoroughly tested and reviewed locally before committing.
+- Commit frequently but logically. Each commit should represent a single, cohesive change.
+- Write clear and descriptive commit messages.
+- Before pushing to `dev`, pull the latest changes to ensure you're integrating with the most up-to-date codebase.
+
+### Staging Branch
+
+The `staging` branch is used for pre-release testing. It mirrors the production environment closely and serves as a final testing ground before deploying changes to production. Only thoroughly tested and approved features should be merged into `staging`.
+
+#### Guidelines for committing to `staging`:
+
+- All changes merged into `staging` must be thoroughly tested and reviewed.
+- Ensure that the changes are compatible with the production environment.
+- Perform integration testing to verify that the combined changes work as expected.
+
+### Main Branch
+
+The `main` branch represents the production-ready codebase. It should only contain stable and fully-tested code that has been approved for release. Merging into `main` triggers production deployments.
+
+#### Guidelines for committing to `main`:
+
+- Only merge changes into `main` that have been thoroughly tested and approved.
+- Coordinate with the team to schedule deployments from `main` to production.
+- Ensure that all necessary checks (e.g., unit tests, integration tests, code reviews) have been completed successfully.
+
+## Commit Message Conventions
+
+We adhere to the Conventional Commits specification for our commit messages. This convention provides a structured and uniform format for documenting changes, making it easier to understand the purpose and impact of each commit.
+
+### Commit Message Structure
+
+Each commit message follows the format:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer]
+
+```
+
+- Type: Describes the type of change being made. It should be one of the following:
+  - `feat`: A new feature
+  - `fix`: A bug fix
+  - `docs`: Documentation changes
+  - `style`: Changes that do not affect the code's meaning (e.g., formatting)
+  - `refactor`: Code changes that neither fix a bug nor add a feature
+  - `test`: Adding missing tests or correcting existing tests
+  - `chore`: Other changes that don't modify src or test files
+- Scope: (Optional) For Monorepo Indicates the scope of the change.
+- Description: A concise summary of the change.
+- Body: (Optional) Provides additional context, details, or reasoning behind the change.
+- Footer: (Optional) Includes any related issue references or breaking changes.
+
+## Example Commit Message
+
+```
+feat(auth): Add user authentication feature
+
+Added user authentication functionality using JWT for secure access control.
+
+Closes #123
+```
