@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.logo {
+  @apply w-48 h-8;
+}
